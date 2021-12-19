@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "video-preview": {
+      "projectType": "library",
+      "root": "projects/video-preview",
+      "sourceRoot": "projects/video-preview/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/video-preview/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/video-preview/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/video-preview/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/video-preview/src/test.ts",
+            "tsConfig": "projects/video-preview/tsconfig.spec.json",
+            "karmaConfig": "projects/video-preview/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "preview-video"
